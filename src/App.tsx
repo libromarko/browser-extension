@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as browser from 'webextension-polyfill';
 
 function App() {
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    browser.tabs.query({currentWindow: true, active: true}).then((tabs) => {
+      let tab = tabs[0];
+      setUrl(tab.url || '');
+    });
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          {url}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );

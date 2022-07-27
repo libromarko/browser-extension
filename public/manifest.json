@@ -14,5 +14,10 @@
     "default_icon": "logo192.png",
     "default_title": "libromarko",
     "default_popup": "index.html"
-  }
+  },
+  
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
 }
