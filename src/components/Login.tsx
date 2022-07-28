@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
 
-interface LoginProps {
-  setToken: () => void;
+interface ChildProps {
+  setToken: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Login({ setToken }: LoginProps) {
+export default function Login({ setToken }: ChildProps) {
   const [formData, setFormData] = useState({});
 
   const handleOnChange = (e: any) => {
@@ -15,9 +16,26 @@ export default function Login({ setToken }: LoginProps) {
     }));
   }
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log('form data', formData);
 
+    const response = await fetch('http://localhost:3001/auth/signin', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const content = await response.json();
+
+    console.log('content', content);
+    if (content.access_token) {
+      await browser.storage.local.set({ token: content.access_token });
+      setToken(content.access_token);
+    }
+    
   }
 
   return (

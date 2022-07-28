@@ -3,49 +3,26 @@ import logo from "./logo.svg";
 import "./App.css";
 import * as browser from "webextension-polyfill";
 import Login from "./components/Login";
+import Token from "./components/Token";
 
 function App() {
-  const [url, setUrl] = useState("");
   const [token, setToken] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleLogin = async () => {
-    /*     fetch('localhost:3001', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: '',
-        password: ''
-      })
-    });
- */
-    await browser.storage.local.set({ token: "token" });
+  const handleStorage = async () => {
     let storageToken = await browser.storage.local.get("token");
     console.log("storage token", storageToken);
-    //setToken(storageToken.token);
+    setToken(storageToken.token);
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await handleLogin();
+    const fetchStorage = async () => {
+      await handleStorage();
     };
 
-    fetchData();
+    fetchStorage();
 
-    if (token) {
-      console.log("if token", token);
-      browser.tabs.query({ currentWindow: true, active: true }).then((tabs) => {
-        let tab = tabs[0];
-        setUrl(tab.url || "");
-      });
-      setIsLoading(false);
-    } else {
-      console.log("else token", token);
-      setIsLoading(false);
-    }
+    setIsLoading(false);
   }, [token]);
 
   return (
@@ -54,9 +31,9 @@ function App() {
         {isLoading ? (
           <img src={logo} className="App-logo" alt="logo" />
         ) : token ? (
-          <p>{url}</p>
+          <Token />
         ) : (
-          <Login setToken={() => setToken} />
+          <Login setToken={setToken} />
         )}
       </header>
     </div>
