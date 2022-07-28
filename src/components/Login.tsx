@@ -50,7 +50,7 @@ export default function Login({ setToken }: ChildProps) {
         name="password"
         type="text"
       />
-      <button onClick={() => handleLogin()} className="button button1">
+      <button onClick={() => handleLogin()} className="button button-login">
         LOGIN
       </button>
     </>

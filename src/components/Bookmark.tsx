@@ -6,10 +6,11 @@ interface ChildProps {
   token: string;
 }
 
-export default function Token({ token }: ChildProps) {
+export default function Bookmark({ token }: ChildProps) {
   const [url, setUrl] = useState("");
   const [formData, setFormData] = useState({});
   const [isSaved, setIsSaved] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     browser.tabs.query({ currentWindow: true, active: true }).then((tabs) => {
@@ -36,7 +37,7 @@ export default function Token({ token }: ChildProps) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-				'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });
@@ -44,6 +45,17 @@ export default function Token({ token }: ChildProps) {
     const content = await response.json();
 
     console.log("content", content);
+
+    if (
+      content.statusCode !== 400 &&
+      content.statusCode !== 500 &&
+      content.statusCode !== 401
+    ) {
+      console.log("content.statusCode:", content.statusCode);
+      setIsSaved(true);
+    } else {
+      setIsError(true);
+    }
   };
 
   return (
@@ -57,7 +69,10 @@ export default function Token({ token }: ChildProps) {
             name="summary"
             type="text"
           />
-          <button onClick={() => handleSave()} className="button button1">
+          <button
+            onClick={() => isError ? null : handleSave()}
+            className={`button button-save ${isError ? "disabled" : null}`}
+          >
             SAVE
           </button>
         </>
