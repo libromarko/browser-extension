@@ -1,5 +1,12 @@
+html {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
+  width: 300px;
+  height: 200px;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -35,4 +42,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #61dafb;
+}
+
+.button {
+  background-color: #61dafb; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #61dafb;
+}
+
+.button1:hover {
+  background-color: #61dafb;
+  color: white;
 }
