@@ -31,7 +31,7 @@ function App() {
         {isLoading ? (
           <img src={logo} className="App-logo" alt="logo" />
         ) : token ? (
-          <Token />
+          <Token token={token} />
         ) : (
           <Login setToken={setToken} />
         )}

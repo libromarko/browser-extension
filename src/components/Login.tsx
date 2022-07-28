@@ -9,41 +9,50 @@ interface ChildProps {
 export default function Login({ setToken }: ChildProps) {
   const [formData, setFormData] = useState({});
 
-  const handleOnChange = (e: any) => {
+  const handleChange = (e: any) => {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
-  }
+  };
 
   const handleLogin = async () => {
-    console.log('form data', formData);
-
-    const response = await fetch('http://localhost:3001/auth/signin', {
-      method: 'POST',
+    const response = await fetch("http://localhost:3001/auth/signin", {
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     });
 
     const content = await response.json();
 
-    console.log('content', content);
+    console.log("content", content);
     if (content.access_token) {
       await browser.storage.local.set({ token: content.access_token });
       setToken(content.access_token);
     }
-    
-  }
+  };
 
   return (
     <>
       <img src={logo} className="App-logo" alt="logo" />
-      <input onChange={handleOnChange} placeholder="email" name="email" type="text" />
-      <input onChange={handleOnChange} placeholder="password" name="password" type="text" />
-      <button onClick={() => handleLogin()} className="button button1">login</button>
+      <input
+        onChange={handleChange}
+        placeholder="email"
+        name="email"
+        type="text"
+      />
+      <input
+        onChange={handleChange}
+        placeholder="password"
+        name="password"
+        type="text"
+      />
+      <button onClick={() => handleLogin()} className="button button1">
+        LOGIN
+      </button>
     </>
   );
 }
