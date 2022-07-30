@@ -29,7 +29,7 @@ export default function Bookmark({ token }: ChildProps) {
   const handleSave = async () => {
     const data = {
       url: url,
-      ...formData
+      ...formData,
     };
 
     const response = await fetch("http://localhost:3001/bookmark", {
@@ -76,7 +76,14 @@ export default function Bookmark({ token }: ChildProps) {
             SAVE
           </button>
         </>
-      ) : null}
+      ) : (
+        <button
+          onClick={() => console.log('view my list')}
+          className={`button button-save`}
+        >
+          VIEW MY LIST
+        </button>
+      )}
     </>
   );
 }
