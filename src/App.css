@@ -5,14 +5,14 @@
 */
 
 html {
-  background-color: #282c34;
+  background-color: #ff5c8d;
 }
 
 .App {
   text-align: center;
   width: 300px;
   height: 200px;
-  background-color: #282c34;
+  background-color: #ff5c8d;
 }
 
 .App-logo {
@@ -27,7 +27,7 @@ html {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff5c8d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -55,18 +55,18 @@ input[type="text"] {
   padding: 6px 10px;
   margin: 4px 0;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
 }
 
 input[type="text"]:focus {
-  border: 2px solid #61dafb;
+  border: 2px solid #a00037;
 }
 
 .button {
-  background-color: #61dafb; /* Green */
+  background-color: #ff5c8d; /* Green */
   border: none;
   color: white;
   padding: 8px 16px;
@@ -82,22 +82,22 @@ input[type="text"]:focus {
 .button-login {
   background-color: white;
   color: black;
-  border: 2px solid #61dafb;
+  border: 2px solid #d81b60;
 }
 
 .button-login:hover {
-  background-color: #61dafb;
+  background-color: #d81b60;
   color: white;
 }
 
 .button-save {
   background-color: white;
   color: black;
-  border: 2px solid #61dafb;
+  border: 2px solid #d81b60;
 }
 
 .button-save:hover {
-  background-color: #61dafb;
+  background-color: #d81b60;
   color: white;
 }
 
