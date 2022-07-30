@@ -1,1 +1,1 @@
-# libromarko Firefox Extension
+# libromarko Browser Extension
