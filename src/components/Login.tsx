@@ -48,7 +48,7 @@ export default function Login({ setToken }: ChildProps) {
         onChange={handleChange}
         placeholder="password"
         name="password"
-        type="text"
+        type="password"
       />
       <button onClick={() => handleLogin()} className="button button-login">
         LOGIN
