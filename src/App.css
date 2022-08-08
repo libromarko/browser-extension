@@ -11,7 +11,7 @@ html {
 .App {
   text-align: center;
   width: 300px;
-  height: 200px;
+  height: 400px;
   background-color: #ff5c8d;
 }
 
@@ -62,6 +62,21 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
+  border: 2px solid #a00037;
+}
+
+input[type="password"] {
+  width: 80%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type="password"]:focus {
   border: 2px solid #a00037;
 }
 
