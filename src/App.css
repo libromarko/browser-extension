@@ -6,9 +6,9 @@
   .Fine-beach-sand-in-the-summer-sun-5-hex { color: #D9BDAD; }
 
   odyssey
-    primary  #e38a20
+    primary  #e38a20 => white
     surface1 #ffecd9 => #5e4536
-    surface2 #6a4d34
+    surface2 #6a4d34 => white
 */
 
 html {
