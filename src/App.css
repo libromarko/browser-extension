@@ -1,18 +1,25 @@
 /* 
-  primary: #d81b60
-  light: #ff5c8d
-  dark: #a00037
+  .Fine-beach-sand-in-the-summer-sun-1-hex { color: #D9AA55; }
+  .Fine-beach-sand-in-the-summer-sun-2-hex { color: #D9B88F; }
+  .Fine-beach-sand-in-the-summer-sun-3-hex { color: #F2D5BB; }
+  .Fine-beach-sand-in-the-summer-sun-4-hex { color: #594B43; }
+  .Fine-beach-sand-in-the-summer-sun-5-hex { color: #D9BDAD; }
+
+  odyssey
+    primary  #e38a20
+    surface1 #ffecd9 => #5e4536
+    surface2 #6a4d34
 */
 
 html {
-  background-color: #ff5c8d;
+  background-color: #ffecd9;
 }
 
 .App {
   text-align: center;
   width: 300px;
   height: 400px;
-  background-color: #ff5c8d;
+  background-color: #ffecd9;
 }
 
 .App-logo {
@@ -27,7 +34,7 @@ html {
 }
 
 .App-header {
-  background-color: #ff5c8d;
+  background-color: #ffecd9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -62,7 +69,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border: 2px solid #a00037;
+  border: 2px solid #5e4536;
 }
 
 input[type="password"] {
@@ -77,11 +84,11 @@ input[type="password"] {
 }
 
 input[type="password"]:focus {
-  border: 2px solid #a00037;
+  border: 2px solid #5e4536;
 }
 
 .button {
-  background-color: #ff5c8d; /* Green */
+  background-color: #ffecd9; /* Green */
   border: none;
   color: white;
   padding: 8px 16px;
@@ -97,22 +104,22 @@ input[type="password"]:focus {
 .button-login {
   background-color: white;
   color: black;
-  border: 2px solid #d81b60;
+  border: 2px solid #5e4536;
 }
 
 .button-login:hover {
-  background-color: #d81b60;
+  background-color: #5e4536;
   color: white;
 }
 
 .button-save {
   background-color: white;
   color: black;
-  border: 2px solid #d81b60;
+  border: 2px solid #5e4536;
 }
 
 .button-save:hover {
-  background-color: #d81b60;
+  background-color: #5e4536;
   color: white;
 }
 
