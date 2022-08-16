@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
+import Alert from "./Alert";
 
 interface ChildProps {
   token: string;
@@ -61,24 +62,29 @@ export default function Bookmark({ token }: ChildProps) {
   return (
     <>
       <img src={logo} className="App-logo" alt="logo" />
+
       {!isSaved ? (
-        <>
-          <input
-            onChange={handleChange}
-            placeholder="summary"
-            name="summary"
-            type="text"
-          />
-          <button
-            onClick={() => (isError ? null : handleSave())}
-            className={`button button-save ${isError ? "disabled" : null}`}
-          >
-            SAVE
-          </button>
-        </>
+        isError ? (
+          <Alert text={"Something went wrong."} />
+        ) : (
+          <>
+            <input
+              onChange={handleChange}
+              placeholder="summary"
+              name="summary"
+              type="text"
+            />
+            <button
+              onClick={() => (isError ? null : handleSave())}
+              className={`button button-save ${isError ? "disabled" : null}`}
+            >
+              SAVE
+            </button>
+          </>
+        )
       ) : (
         <button
-          onClick={() => console.log('view my list')}
+          onClick={() => console.log("view my list")}
           className={`button button-save`}
         >
           VIEW MY LIST

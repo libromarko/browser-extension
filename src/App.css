@@ -127,3 +127,9 @@ input[type="password"]:focus {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
