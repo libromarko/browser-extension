@@ -87,7 +87,7 @@ export default function Bookmark({ token }: ChildProps) {
           onClick={() => console.log("view my list")}
           className={`button button-save`}
         >
-          VIEW MY LIST
+          VIEW MY BOOKMARKS
         </button>
       )}
     </>
