@@ -70,8 +70,8 @@ export default function Bookmark({ token }: ChildProps) {
           <>
             <input
               onChange={handleChange}
-              placeholder="summary"
-              name="summary"
+              placeholder="description"
+              name="description"
               type="text"
             />
             <button
