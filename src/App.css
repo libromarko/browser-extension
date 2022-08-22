@@ -1,12 +1,12 @@
 html {
-  background-color: #ffecd9;
+  background-color: #b39ddb;
 }
 
 .App {
   text-align: center;
   width: 300px;
   height: 400px;
-  background-color: #ffecd9;
+  background-color: #b39ddb;
 }
 
 .App-logo {
@@ -21,7 +21,7 @@ html {
 }
 
 .App-header {
-  background-color: #ffecd9;
+  background-color: #b39ddb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border: 2px solid #5e4536;
+  border: 2px solid #4527a0;
 }
 
 input[type="password"] {
@@ -71,7 +71,7 @@ input[type="password"] {
 }
 
 input[type="password"]:focus {
-  border: 2px solid #5e4536;
+  border: 2px solid #4527a0;
 }
 
 .button {
@@ -91,22 +91,22 @@ input[type="password"]:focus {
 .button-login {
   background-color: white;
   color: black;
-  border: 2px solid #5e4536;
+  border: 2px solid #4527a0;
 }
 
 .button-login:hover {
-  background-color: #5e4536;
+  background-color: #4527a0;
   color: white;
 }
 
 .button-save {
   background-color: white;
   color: black;
-  border: 2px solid #5e4536;
+  border: 2px solid #4527a0;
 }
 
 .button-save:hover {
-  background-color: #5e4536;
+  background-color: #4527a0;
   color: white;
 }
 
