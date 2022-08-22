@@ -35,7 +35,7 @@ export default function Bookmark({ token }: ChildProps) {
       ...formData,
     };
 
-    const response = await fetch(`${api}/bookmark`, {
+    const response = await fetch(`${api}bookmark`, {
       method: "POST",
       headers: {
         Accept: "application/json",
