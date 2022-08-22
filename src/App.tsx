@@ -5,6 +5,9 @@ import * as browser from "webextension-polyfill";
 import Login from "./components/Login";
 import Bookmark from "./components/Bookmark";
 
+const api = process.env.REACT_APP_API_URL;
+
+
 function App() {
   const [token, setToken] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +21,7 @@ function App() {
   };
 
   const userExists = async (access_token: string) => {
-    const response = await fetch("http://localhost:3001/user/me", {
+    const response = await fetch(`${api}user/me`, {
       method: "GET",
       headers: {
         Accept: "application/json",

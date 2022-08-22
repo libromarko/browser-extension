@@ -3,6 +3,8 @@ import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
 import Alert from "./Alert";
 
+const api = process.env.REACT_APP_API_URL;
+
 interface ChildProps {
   token: string;
 }
@@ -33,7 +35,7 @@ export default function Bookmark({ token }: ChildProps) {
       ...formData,
     };
 
-    const response = await fetch("http://localhost:3001/bookmark", {
+    const response = await fetch(`${api}/bookmark`, {
       method: "POST",
       headers: {
         Accept: "application/json",

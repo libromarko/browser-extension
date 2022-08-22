@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
 
+const api = process.env.REACT_APP_API_URL;
+
 interface ChildProps {
   setToken: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -17,7 +19,7 @@ export default function Login({ setToken }: ChildProps) {
   };
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:3001/auth/signin", {
+    const response = await fetch(`${api}auth/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",
