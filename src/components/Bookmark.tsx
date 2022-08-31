@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
+import libromarkologo from "../libromarko_logo.png";
 import Alert from "./Alert";
 
 const api = process.env.REACT_APP_API_URL;
@@ -63,7 +64,12 @@ export default function Bookmark({ token }: ChildProps) {
 
   return (
     <>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img
+        src={libromarkologo}
+        style={{ height: '40vmin' }}
+        className={isSaved ? "App-logo" : ""}
+        alt="logo"
+      />
 
       {!isSaved ? (
         isError ? (

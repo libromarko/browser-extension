@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as browser from "webextension-polyfill";
 import logo from "../logo.svg";
+import libromarkologo from "../libromarko_logo.png";
 
 const api = process.env.REACT_APP_API_URL;
 
@@ -39,7 +40,7 @@ export default function Login({ setToken }: ChildProps) {
 
   return (
     <>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={libromarkologo} height={256} alt="logo" />
       <input
         onChange={handleChange}
         placeholder="email"

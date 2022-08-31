@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Freedom for bookmark.",
 
   "icons": {
     "512": "logo512.png",
