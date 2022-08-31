@@ -40,7 +40,7 @@ export default function Login({ setToken }: ChildProps) {
 
   return (
     <>
-      <img src={libromarkologo} height={256} alt="logo" />
+      <img src={libromarkologo} style={{ height: "40vmin" }} alt="logo" />
       <input
         onChange={handleChange}
         placeholder="email"
