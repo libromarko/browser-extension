@@ -55,6 +55,10 @@ export default function Login({ setToken }: ChildProps) {
       <button onClick={() => handleLogin()} className="button button-login">
         LOGIN
       </button>
+
+      <a href="https://libromarko.xyz">
+        Sign Up
+      </a>
     </>
   );
 }

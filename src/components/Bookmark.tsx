@@ -65,7 +65,7 @@ export default function Bookmark({ token }: ChildProps) {
     <>
       <img
         src={libromarkologo}
-        style={{ height: '40vmin' }}
+        style={{ height: "40vmin" }}
         className={isSaved ? "App-logo" : ""}
         alt="logo"
       />
@@ -90,12 +90,9 @@ export default function Bookmark({ token }: ChildProps) {
           </>
         )
       ) : (
-        <button
-          onClick={() => console.log("view my list")}
-          className={`button button-save`}
-        >
+        <a href="https://libromarko.xyz" className={`button button-save`}>
           VIEW MY BOOKMARKS
-        </button>
+        </a>
       )}
     </>
   );
