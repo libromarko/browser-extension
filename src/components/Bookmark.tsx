@@ -90,7 +90,7 @@ export default function Bookmark({ token }: ChildProps) {
           </>
         )
       ) : (
-        <a href="https://libromarko.xyz" className={`button button-save`}>
+        <a href="https://libromarko.xyz" className={`button button-save`} target="_blank" rel="noreferrer">
           VIEW MY BOOKMARKS
         </a>
       )}

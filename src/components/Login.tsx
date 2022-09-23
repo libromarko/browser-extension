@@ -56,7 +56,7 @@ export default function Login({ setToken }: ChildProps) {
         LOGIN
       </button>
 
-      <a href="https://libromarko.xyz">
+      <a href="https://libromarko.xyz" target="_blank" rel="noreferrer" >
         Sign Up
       </a>
     </>
